@@ -12,6 +12,12 @@ create table CART
    primary key (ID)
 );
 
+insert into CART
+values ('1', '0', null);
+
+insert into CART
+values ('2', '1', '2017-09-10 18:39:00');
+
 create table COMMODITY
 (
    ID         			varchar(40) not null ,

@@ -4,6 +4,8 @@ import java.io.Serializable;
 
 import org.apache.ibatis.type.JdbcType;
 
+import com.alibaba.fastjson.annotation.JSONField;
+
 import indi.mybatis.flying.annotations.FieldMapperAnnotation;
 import indi.mybatis.flying.annotations.TableMapperAnnotation;
 
@@ -31,6 +33,7 @@ public class Cart implements Serializable {
 	 * 
 	 */
 	@FieldMapperAnnotation(dbFieldName = "DEAL_TIME", jdbcType = JdbcType.TIMESTAMP)
+	@JSONField(format = "yyyy-MM-dd hh:mm:ss")
 	private java.util.Date dealTime;
 
 	public String getId() {
