@@ -7,9 +7,6 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>flying-demo Maven Webapp</name>
 	<url>http://maven.apache.org</url>
-	<build>
-		<finalName>flying-demo</finalName>
-	</build>
 	<dependencies>
 		<dependency>
 			<groupId>com.github.limeng32</groupId>
@@ -104,6 +101,12 @@
 			<artifactId>cglib-nodep</artifactId>
 			<version>${cglib-nodep.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>${servlet.version}</version>
+			<scope>provided</scope>
+		</dependency>
 	</dependencies>
 	<properties>
 		<flying.version>0.9.0</flying.version>
@@ -117,5 +120,21 @@
 		<slf4j-log4j12.version>1.7.7</slf4j-log4j12.version>
 		<unitils.version>3.4.2</unitils.version>
 		<cglib-nodep.version>2.2.2</cglib-nodep.version>
+		<servlet.version>3.0.1</servlet.version>
 	</properties>
+	<build>
+		<finalName>flying-demo</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.tomcat.maven</groupId>
+				<artifactId>tomcat7-maven-plugin</artifactId>
+				<configuration>
+					<path>/flying-demo</path>
+					<systemProperties>
+						<com.sun.management.jmxremote.port>4000</com.sun.management.jmxremote.port>
+					</systemProperties>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 </project>
