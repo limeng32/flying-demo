@@ -1,0 +1,4 @@
+<dataset>
+	<COMMODITY ID="mmm" NAME="牙刷" PRICE="1000" />
+	<COMMODITY ID="nnn" NAME="牙膏" PRICE="2000" />
+</dataset>

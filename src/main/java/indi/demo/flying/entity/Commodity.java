@@ -5,7 +5,9 @@ import java.io.Serializable;
 import org.apache.ibatis.type.JdbcType;
 
 import indi.mybatis.flying.annotations.FieldMapperAnnotation;
+import indi.mybatis.flying.annotations.TableMapperAnnotation;
 
+@TableMapperAnnotation(tableName = "COMMODITY")
 public class Commodity implements Serializable {
 
 	private static final long serialVersionUID = 1L;

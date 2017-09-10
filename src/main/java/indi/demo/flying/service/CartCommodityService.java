@@ -3,10 +3,12 @@ package indi.demo.flying.service;
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import indi.demo.flying.entity.CartCommodity;
 import indi.demo.flying.mapper.CartCommodityMapper;
 
+@Service
 public class CartCommodityService implements CartCommodityMapper {
 
 	@Autowired

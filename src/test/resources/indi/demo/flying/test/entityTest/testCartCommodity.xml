@@ -1,0 +1,13 @@
+<dataset>
+	<CART ID="aaa" DEAL="0" />
+	<CART ID="bbb" DEAL="1" DEAL_TIME="2017-09-10 10:00:00" />
+
+	<COMMODITY ID="mmm" NAME="牙刷" PRICE="1000" />
+	<COMMODITY ID="nnn" NAME="牙膏" PRICE="2000" />
+	<COMMODITY ID="ooo" NAME="牙刷2" PRICE="2500" />
+
+	<CART_COMMODITY ID="w" AMOUNT="1" CART_ID="aaa" COMM_ID="mmm" />
+	<CART_COMMODITY ID="x" AMOUNT="2" CART_ID="aaa" COMM_ID="nnn" />
+	<CART_COMMODITY ID="y" AMOUNT="3" CART_ID="bbb" COMM_ID="mmm" />
+	<CART_COMMODITY ID="z" AMOUNT="4" CART_ID="bbb" COMM_ID="nnn" />
+</dataset>

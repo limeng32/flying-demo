@@ -1,0 +1,4 @@
+<dataset>
+	<CART ID="aaa" DEAL="0" DEAL_TIME="2017-09-10 00:00:00" />
+	<CART ID="bbb" DEAL="1" DEAL_TIME="2017-09-10 10:00:00" />
+</dataset>

@@ -5,10 +5,19 @@ import java.io.Serializable;
 import org.apache.ibatis.type.JdbcType;
 
 import indi.mybatis.flying.annotations.FieldMapperAnnotation;
+import indi.mybatis.flying.annotations.TableMapperAnnotation;
 
+@TableMapperAnnotation(tableName = "CART_COMMODITY")
 public class CartCommodity implements Serializable {
 
 	private static final long serialVersionUID = 1L;
+
+	/**
+	 * 主键，以UUID方式保存
+	 * 
+	 */
+	@FieldMapperAnnotation(dbFieldName = "ID", jdbcType = JdbcType.VARCHAR, isUniqueKey = true)
+	private String id;
 
 	/**
 	 * 关联的购物车
@@ -53,6 +62,14 @@ public class CartCommodity implements Serializable {
 
 	public void setAmount(Integer amount) {
 		this.amount = amount;
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
 	}
 
 }
