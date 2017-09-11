@@ -26,6 +26,42 @@ create table COMMODITY
    primary key (ID)
 );
 
+insert into COMMODITY
+values ('1', '牙刷A', '1200');
+
+insert into COMMODITY
+values ('2', '牙刷B', '1850');
+
+insert into COMMODITY
+values ('3', '牙刷C', '2100');
+
+insert into COMMODITY
+values ('4', '佳洁士牙膏', '1499');
+
+insert into COMMODITY
+values ('5', '六必治牙膏', '1999');
+
+insert into COMMODITY
+values ('6', '云南白药牙膏', '2499');
+
+insert into COMMODITY
+values ('7', '潘婷洗发露', '3500');
+
+insert into COMMODITY
+values ('8', '多芬洗发露', '3900');
+
+insert into COMMODITY
+values ('9', '海飞丝洗发露', '5100');
+
+insert into COMMODITY
+values ('10', '浴液-1500ML', '2800');
+
+insert into COMMODITY
+values ('11', '浴液-2000ML', '3200');
+
+insert into COMMODITY
+values ('12', '浴液-4000ML', '4900');
+
 create table CART_COMMODITY
 (
    ID         			varchar(40) not null ,
