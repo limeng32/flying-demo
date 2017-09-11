@@ -57,4 +57,11 @@ public class Commodity implements Serializable {
 		this.price = price;
 	}
 
+	public String getPriceStr() {
+		if (price != null) {
+			return "£¤ " + price / 100 + " Ôª " + price % 100 + " ·Ö";
+		} else {
+			return null;
+		}
+	}
 }
