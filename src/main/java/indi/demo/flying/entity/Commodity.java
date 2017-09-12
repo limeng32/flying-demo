@@ -59,7 +59,7 @@ public class Commodity implements Serializable {
 
 	public String getPriceStr() {
 		if (price != null) {
-			return "￥ " + price / 100 + " 元 " + price % 100 + " 分";
+			return "RMB " + price / 100 + " 元 " + price % 100 + " 分";
 		} else {
 			return null;
 		}

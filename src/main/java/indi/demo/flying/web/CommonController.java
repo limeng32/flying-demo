@@ -1,5 +1,6 @@
 package indi.demo.flying.web;
 
+import java.util.Calendar;
 import java.util.Collection;
 
 import javax.servlet.http.HttpServletRequest;
@@ -14,7 +15,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import indi.demo.flying.condition.CommodityCondition;
 import indi.demo.flying.entity.Cart;
+import indi.demo.flying.entity.CartCommodity;
 import indi.demo.flying.entity.Commodity;
+import indi.demo.flying.service.CartCommodityService;
 import indi.demo.flying.service.CartService;
 import indi.demo.flying.service.CommodityService;
 import indi.mybatis.flying.models.Conditionable;
@@ -30,6 +33,9 @@ public class CommonController {
 
 	@Autowired
 	private CartService cartService;
+
+	@Autowired
+	private CartCommodityService cartCommodityService;
 
 	@Autowired
 	private CommodityService commodityService;
@@ -80,6 +86,85 @@ public class CommonController {
 		} else {
 			Page<Commodity> page = new Page<>(commodityC, commodityCondition.getLimiter());
 			mm.addAttribute("_content", page);
+		}
+		return UNIQUE_VIEW_NAME;
+	}
+
+	@RequestMapping(method = { RequestMethod.GET }, value = "/addCommodity")
+	public String AddCommodity(HttpServletRequest request, HttpServletResponse response, ModelMap mm,
+			@RequestParam(value = "price", required = false) Integer price,
+			@RequestParam(value = "name", required = false) String name) {
+		Commodity commodity = new Commodity();
+		commodity.setName(name);
+		commodity.setPrice(price);
+		commodityService.myInsert(commodity);
+		mm.addAttribute("_content", commodity);
+		return UNIQUE_VIEW_NAME;
+	}
+
+	@RequestMapping(method = { RequestMethod.GET }, value = "/updateCommodity")
+	public String updateCommodity(HttpServletRequest request, HttpServletResponse response, ModelMap mm,
+			@RequestParam(value = "id", required = false) Integer id,
+			@RequestParam(value = "price", required = false) Integer price,
+			@RequestParam(value = "name", required = false) String name) {
+		Commodity commodity = commodityService.mySelect(id);
+		if (commodity != null) {
+			if (name != null) {
+				commodity.setName(name);
+			}
+			if (price != null) {
+				commodity.setPrice(price);
+			}
+			commodityService.myUpdate(commodity);
+		}
+		mm.addAttribute("_content", commodity);
+		return UNIQUE_VIEW_NAME;
+	}
+
+	@RequestMapping(method = { RequestMethod.GET }, value = "/getCommodityByCart")
+	public String getCommodityByCart(HttpServletRequest request, HttpServletResponse response, ModelMap mm,
+			@RequestParam(value = "id", required = false) String cartId) {
+		Cart cartCondition = new Cart();
+		cartCondition.setId(cartId);
+		CartCommodity cartCommodityCondition = new CartCommodity();
+		cartCommodityCondition.setCart(cartCondition);
+		Collection<CartCommodity> cartCommodityC = cartCommodityService.mySelectAll(cartCommodityCondition);
+		mm.addAttribute("_content", cartCommodityC);
+		return UNIQUE_VIEW_NAME;
+	}
+
+	/* 对购物车中的商品进行结账 */
+	@RequestMapping(method = { RequestMethod.GET }, value = "/dealCart")
+	public String dealCart(HttpServletRequest request, HttpServletResponse response, ModelMap mm,
+			@RequestParam(value = "id", required = false) String cartId) {
+		Cart cart = cartService.mySelect(cartId);
+		if (cart != null) {
+			cart.setDeal(true);
+			cart.setDealTime(Calendar.getInstance().getTime());
+			cartService.myUpdate(cart);
+
+			CartCommodity cartCommodityCondition = new CartCommodity();
+			cartCommodityCondition.setCart(cart);
+			Collection<CartCommodity> cartCommodityC = cartCommodityService.mySelectAll(cartCommodityCondition);
+			mm.addAttribute("_content", cartCommodityC);
+		}
+		return UNIQUE_VIEW_NAME;
+	}
+
+	/* 将购物车中的商品恢复成未结账状态 */
+	@RequestMapping(method = { RequestMethod.GET }, value = "/unDealCart")
+	public String unDealCart(HttpServletRequest request, HttpServletResponse response, ModelMap mm,
+			@RequestParam(value = "id", required = false) String cartId) {
+		Cart cart = cartService.mySelect(cartId);
+		if (cart != null) {
+			cart.setDeal(false);
+			cart.setDealTime(null);
+			cartService.myUpdatePersistent(cart);
+
+			CartCommodity cartCommodityCondition = new CartCommodity();
+			cartCommodityCondition.setCart(cart);
+			Collection<CartCommodity> cartCommodityC = cartCommodityService.mySelectAll(cartCommodityCondition);
+			mm.addAttribute("_content", cartCommodityC);
 		}
 		return UNIQUE_VIEW_NAME;
 	}

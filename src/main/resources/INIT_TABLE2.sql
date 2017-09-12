@@ -16,7 +16,7 @@ insert into CART
 values ('1', '0', null);
 
 insert into CART
-values ('2', '1', '2017-09-10 18:39:00');
+values ('2', '1', null);
 
 create table COMMODITY
 (
@@ -70,3 +70,27 @@ create table CART_COMMODITY
    AMOUNT            	integer ,
    primary key (ID)
 );
+
+insert into CART_COMMODITY
+values ('1', '1', '1', '3');
+
+insert into CART_COMMODITY
+values ('2', '1', '5', '4');
+
+insert into CART_COMMODITY
+values ('3', '1', '8', '1');
+
+insert into CART_COMMODITY
+values ('4', '1', '12', '1');
+
+insert into CART_COMMODITY
+values ('5', '2', '2', '2');
+
+insert into CART_COMMODITY
+values ('6', '2', '4', '1');
+
+insert into CART_COMMODITY
+values ('7', '2', '9', '2');
+
+insert into CART_COMMODITY
+values ('8', '2', '11', '1');
