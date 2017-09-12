@@ -11,7 +11,6 @@ How to play？
 <dataset>
 	<CART ID="1" DEAL="0" DEAL_TIME=null />
 	<CART ID="2" DEAL="0" DEAL_TIME=null />
-
 	<COMMODITY ID="1" NAME="牙刷A" PRICE="1200" />
 	<COMMODITY ID="2" NAME="牙刷B" PRICE="1850" />
 	<COMMODITY ID="3" NAME="牙刷C" PRICE="2100" />
@@ -24,7 +23,6 @@ How to play？
 	<COMMODITY ID="10" NAME="佳洁士牙膏" PRICE="2800" />
 	<COMMODITY ID="11" NAME="六必治牙膏" PRICE="3200" />
 	<COMMODITY ID="12" NAME="云南白药牙膏" PRICE="4900" />
-
 	<CART_COMMODITY ID="1" CART_ID="1" COMM_ID="1" AMOUNT="3" />
 	<CART_COMMODITY ID="2" CART_ID="1" COMM_ID="5" AMOUNT="4" />
 	<CART_COMMODITY ID="3" CART_ID="1" COMM_ID="8" AMOUNT="1" />
