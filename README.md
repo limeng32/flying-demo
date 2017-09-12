@@ -38,10 +38,17 @@ How to play？
 4、现在，在浏览器中输入以下 url 都可以看到效果：
 
 查看购物车：			http://localhost:8080/flying-demo/getCart?id=${购物车cart的id}
+
 查看商品：			http://localhost:8080/flying-demo/getCommodity?id=${商品commodity的id}
+
 翻页查看商品：		http://localhost:8080/flying-demo/getCommodityInPage?pageNum=${页码}&priceOrder=${按价格升序或降序输入asc或desc}&priceFrom=${价格最小值}&priceTo=${价格最大值}
+
 增加新商品：			http://localhost:8080/flying-demo/addCommodity?name=${新商品名称}&price=${新商品价格}
+
 编辑商品：			http://localhost:8080/flying-demo/updateCommodity?id=${商品的id}&name=${商品的名称}&price=${商品的价格}
+
 查看购物车中的商品：	http://localhost:8080/flying-demo/getCommodityByCart?id=${购物车的id}
+
 对购物车进行结账：	http://localhost:8080/flying-demo/dealCart?id=${购物车的id}
+
 取消购物车的结账：	http://localhost:8080/flying-demo/undealCart?id=${购物车的id}
