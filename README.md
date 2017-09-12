@@ -6,7 +6,7 @@ How to play？
 
 2、以 maven 命令执行 tomcat7:run
 
-3、以下是初始化的数据集，它描述了两个购物车、12种商品和商品装入购物车的情况：
+3、以下是初始化时的添加的默认数据，它描述了两个购物车、12种商品和商品装入购物车的情况：
 
 <dataset>
 	<CART ID="1" DEAL="0" DEAL_TIME=null />
@@ -35,7 +35,7 @@ How to play？
 	<CART_COMMODITY ID="8" CART_ID="2" COMM_ID="11" AMOUNT="1" />
 </dataset>
 
-4、现在，在浏览器中输入以下 url 都可以看到效果：
+现在，在浏览器中输入以下 url 可以看到效果：
 
 查看购物车：			http://localhost:8080/flying-demo/getCart?id=${购物车cart的id}
 
