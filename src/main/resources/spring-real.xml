@@ -16,19 +16,7 @@
        	http://www.springframework.org/schema/jdbc
        	http://www.springframework.org/schema/jdbc/spring-jdbc-3.2.xsd">
 
-	<context:component-scan base-package="indi.demo.flying.*" />
-
-	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
-		<property name="configLocation" value="classpath:Configuration.xml" />
-		<property name="dataSource" ref="dataSource" />
-		<property name="mapperLocations" value="classpath*:indi/demo/flying/mapper/*.xml" />
-		<property name="typeAliasesPackage" value="indi.demo.flying" />
-	</bean>
-
-	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<property name="basePackage" value="indi.demo.flying.mapper" />
-		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
-	</bean>
+	<import resource="classpath:spring-fragment.xml" />
 
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
 		destroy-method="close">
