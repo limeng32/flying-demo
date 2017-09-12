@@ -11,6 +11,7 @@ How to play？
 <dataset>
 	<CART ID="1" DEAL="0" DEAL_TIME=null />
 	<CART ID="2" DEAL="0" DEAL_TIME=null />
+	
 	<COMMODITY ID="1" NAME="牙刷A" PRICE="1200" />
 	<COMMODITY ID="2" NAME="牙刷B" PRICE="1850" />
 	<COMMODITY ID="3" NAME="牙刷C" PRICE="2100" />
@@ -23,6 +24,7 @@ How to play？
 	<COMMODITY ID="10" NAME="佳洁士牙膏" PRICE="2800" />
 	<COMMODITY ID="11" NAME="六必治牙膏" PRICE="3200" />
 	<COMMODITY ID="12" NAME="云南白药牙膏" PRICE="4900" />
+	
 	<CART_COMMODITY ID="1" CART_ID="1" COMM_ID="1" AMOUNT="3" />
 	<CART_COMMODITY ID="2" CART_ID="1" COMM_ID="5" AMOUNT="4" />
 	<CART_COMMODITY ID="3" CART_ID="1" COMM_ID="8" AMOUNT="1" />
@@ -51,4 +53,6 @@ How to play？
 
 取消购物车的结账：	http://localhost:8080/flying-demo/undealCart?id=${购物车的id}
 
-以上方法的实现可参见 https://github.com/limeng32/flying-demo/blob/master/src/main/java/indi/demo/flying/web/CommonController.java ，如果 pojo 采用双向相关的方式构建可以写出更灵活强大的交互功能，不过这已超过本例的讨论范围。
+以上方法的实现代码为： https://github.com/limeng32/flying-demo/blob/master/src/main/java/indi/demo/flying/web/CommonController.java 
+
+如果 pojo 采用双向相关的方式构建可以写出更灵活强大的交互功能，不过这已超过本例的讨论范围。
