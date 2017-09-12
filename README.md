@@ -52,3 +52,5 @@ How to play？
 对购物车进行结账：	http://localhost:8080/flying-demo/dealCart?id=${购物车的id}
 
 取消购物车的结账：	http://localhost:8080/flying-demo/undealCart?id=${购物车的id}
+
+以上方法的实现可参见 https://github.com/limeng32/flying-demo/blob/master/src/main/java/indi/demo/flying/web/CommonController.java ，如果 pojo 采用双向相关的方式构建可以写出更灵活强大的交互功能，不过这已超过本例的讨论范围。
