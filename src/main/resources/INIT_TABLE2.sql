@@ -16,7 +16,7 @@ insert into CART
 values ('1', '0', null);
 
 insert into CART
-values ('2', '1', null);
+values ('2', '0', null);
 
 create table COMMODITY
 (

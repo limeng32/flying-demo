@@ -152,7 +152,7 @@ public class CommonController {
 	}
 
 	/* 将购物车中的商品恢复成未结账状态 */
-	@RequestMapping(method = { RequestMethod.GET }, value = "/unDealCart")
+	@RequestMapping(method = { RequestMethod.GET }, value = "/undealCart")
 	public String unDealCart(HttpServletRequest request, HttpServletResponse response, ModelMap mm,
 			@RequestParam(value = "id", required = false) String cartId) {
 		Cart cart = cartService.mySelect(cartId);
