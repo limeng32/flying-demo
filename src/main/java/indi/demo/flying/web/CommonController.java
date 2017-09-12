@@ -53,7 +53,7 @@ public class CommonController {
 	@RequestMapping(method = { RequestMethod.GET }, value = "/getCommodityInPage")
 	public String getCommodityInPage(HttpServletRequest request, HttpServletResponse response, ModelMap mm,
 			@RequestParam(value = "pageNum", required = false) Integer pageNum,
-			@RequestParam(value = "priceOrder", required = false) Conditionable.Sequence sequence,
+			@RequestParam(value = "priceOrder", required = false) String priceOrder,
 			@RequestParam(value = "priceFrom", required = false) Integer priceFrom,
 			@RequestParam(value = "priceTo", required = false) Integer priceTo) {
 		CommodityCondition commodityCondition = new CommodityCondition();
@@ -62,6 +62,11 @@ public class CommonController {
 		}
 		if (priceTo != null) {
 			commodityCondition.setPriceTo(priceTo);
+		}
+		Conditionable.Sequence sequence = null;
+		try {
+			sequence = Conditionable.Sequence.valueOf(priceOrder);
+		} catch (Exception e) {
 		}
 		if (sequence != null) {
 			commodityCondition.setSorter(new SortParam(new Order("PRICE", sequence)));
