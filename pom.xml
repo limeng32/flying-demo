@@ -130,6 +130,7 @@
 				<artifactId>tomcat7-maven-plugin</artifactId>
 				<configuration>
 					<path>/flying-demo</path>
+					<uriEncoding>UTF-8</uriEncoding>
 					<systemProperties>
 						<com.sun.management.jmxremote.port>4000</com.sun.management.jmxremote.port>
 					</systemProperties>
