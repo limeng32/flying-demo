@@ -13,21 +13,21 @@ public class Commodity implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Ö÷¼ü£¬ÒÔUUID·½Ê½±£´æ
+	 * ä¸»é”®ï¼Œä»¥UUIDæ–¹å¼ä¿å­˜
 	 * 
 	 */
 	@FieldMapperAnnotation(dbFieldName = "ID", jdbcType = JdbcType.VARCHAR, isUniqueKey = true)
 	private String id;
 
 	/**
-	 * ÉÌÆ·Ãû³Æ
+	 * å•†å“åç§°
 	 * 
 	 */
 	@FieldMapperAnnotation(dbFieldName = "NAME", jdbcType = JdbcType.VARCHAR)
 	private String name;
 
 	/**
-	 * ÉÌÆ·¼Û¸ñ£¬ÒÔ·ÖÎªµ¥Î»
+	 * å•†å“ä»·æ ¼ï¼Œä»¥åˆ†ä¸ºå•ä½
 	 * 
 	 */
 	@FieldMapperAnnotation(dbFieldName = "PRICE", jdbcType = JdbcType.INTEGER)
@@ -59,7 +59,7 @@ public class Commodity implements Serializable {
 
 	public String getPriceStr() {
 		if (price != null) {
-			return "RMB " + price / 100 + " Ôª " + price % 100 + " ·Ö";
+			return "RMB " + price / 100 + " å…ƒ " + price % 100 + " åˆ†";
 		} else {
 			return null;
 		}
