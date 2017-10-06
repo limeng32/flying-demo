@@ -13,7 +13,7 @@ public class Commodity implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * 主键，以UUID方式保存
+	 * 主键，为UUID形式
 	 * 
 	 */
 	@FieldMapperAnnotation(dbFieldName = "ID", jdbcType = JdbcType.VARCHAR, isUniqueKey = true)
@@ -59,7 +59,7 @@ public class Commodity implements Serializable {
 
 	public String getPriceStr() {
 		if (price != null) {
-			return "RMB " + price / 100 + " 元 " + price % 100 + " 分";
+			return "RMB " + price / 100 + "." + price % 100 + " YUAN";
 		} else {
 			return null;
 		}

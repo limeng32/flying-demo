@@ -36,7 +36,7 @@
 	<bean
 		class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
 		<property name="order" value="0" />
-		<property name="defaultContentType" value="text/html" />
+		<property name="defaultContentType" value="application/json" />
 		<property name="ignoreAcceptHeader" value="true" />
 		<property name="favorPathExtension" value="false" />
 		<property name="favorParameter" value="true" />

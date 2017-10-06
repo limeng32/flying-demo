@@ -15,21 +15,21 @@ public class Cart implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Ö÷¼ü£¬ÒÔUUID·½Ê½±£´æ
+	 * ä¸»é”®ï¼Œä¸ºUUIDå½¢å¼
 	 * 
 	 */
 	@FieldMapperAnnotation(dbFieldName = "ID", jdbcType = JdbcType.VARCHAR, isUniqueKey = true)
 	private String id;
 
 	/**
-	 * ÊÇ·ñ³É½»
+	 * æ­¤è´­ç‰©è½¦æ˜¯å¦å·²ç»“å¸
 	 * 
 	 */
 	@FieldMapperAnnotation(dbFieldName = "DEAL", jdbcType = JdbcType.BOOLEAN)
 	private Boolean deal;
 
 	/**
-	 * ³É½»Ê±¼ä
+	 * ç»“è´¦æ—¶é—´
 	 * 
 	 */
 	@FieldMapperAnnotation(dbFieldName = "DEAL_TIME", jdbcType = JdbcType.TIMESTAMP)
