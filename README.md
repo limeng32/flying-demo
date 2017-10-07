@@ -37,22 +37,22 @@ How to play？
 ```
 现在，在浏览器中输入以下 url 可以看到效果：
 
-查看购物车：			http://localhost:8080/flying-demo/getCart?_content=json&id=${购物车cart的id}
+查看购物车：			http://localhost:8080/flying-demo/getCart?id=${购物车cart的id}
 
-查看商品：			http://localhost:8080/flying-demo/getCommodity?_content=json&id=${商品commodity的id}
+查看商品：			http://localhost:8080/flying-demo/getCommodity?id=${商品commodity的id}
 
-翻页查看商品：		http://localhost:8080/flying-demo/getCommodityInPage?_content=json&pageNum=${页码}&priceOrder=${按价格升序或降序输入asc或desc}&priceFrom=${价格最小值}&priceTo=${价格最大值}
+翻页查看商品：		http://localhost:8080/flying-demo/getCommodityInPage?pageNum=${页码}&priceOrder=${按价格升序或降序输入asc或desc}&priceFrom=${价格最小值}&priceTo=${价格最大值}
 
-增加新商品：			http://localhost:8080/flying-demo/addCommodity?_content=json&name=${新商品名称}&price=${新商品价格}
+增加新商品：			http://localhost:8080/flying-demo/addCommodity?name=${新商品名称}&price=${新商品价格}
 
-编辑商品：			http://localhost:8080/flying-demo/updateCommodity?_content=json&id=${商品的id}&name=${商品的名称}&price=${商品的价格}
+编辑商品：			http://localhost:8080/flying-demo/updateCommodity?id=${商品的id}&name=${商品的名称}&price=${商品的价格}
 
-查看购物车中的商品：	http://localhost:8080/flying-demo/_content=json&getCommodityByCart?id=${购物车的id}
+查看购物车中的商品：	http://localhost:8080/flying-demo/getCommodityByCart?id=${购物车的id}
 
-对购物车进行结账：	http://localhost:8080/flying-demo/_content=json&dealCart?id=${购物车的id}
+对购物车进行结账：	http://localhost:8080/flying-demo/dealCart?id=${购物车的id}
 
-取消购物车的结账：	http://localhost:8080/flying-demo/_content=json&undealCart?id=${购物车的id}
+取消购物车的结账：	http://localhost:8080/flying-demo/undealCart?id=${购物车的id}
 
-以上方法的实现代码为： https://github.com/limeng32/flying-demo/blob/master/src/main/java/indi/demo/flying/web/CommonController.java 
+以上方法的实现代码可见： https://github.com/limeng32/flying-demo/blob/master/src/main/java/indi/demo/flying/web/CommonController.java 
 
 如果 pojo 采用双向相关的方式构建可以写出更灵活强大的交互功能，不过这已超过本例的讨论范围。
