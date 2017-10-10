@@ -56,3 +56,5 @@ How to play？
 以上方法的实现代码可见： https://github.com/limeng32/flying-demo/blob/master/src/main/java/indi/demo/flying/web/CommonController.java 
 
 如果 pojo 采用双向相关的方式构建可以写出更灵活强大的交互功能，不过这已超过本例的讨论范围。
+
+最后，flying 项目介绍请见 [flying-doc.limeng32.com](http://flying-doc.limeng32.com) ，我们为开发最好的 mybatis 插件而努力。
