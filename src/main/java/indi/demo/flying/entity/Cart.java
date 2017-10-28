@@ -2,14 +2,13 @@ package indi.demo.flying.entity;
 
 import java.io.Serializable;
 
-import org.apache.ibatis.type.JdbcType;
+import javax.persistence.Column;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 import com.alibaba.fastjson.annotation.JSONField;
 
-import indi.mybatis.flying.annotations.FieldMapperAnnotation;
-import indi.mybatis.flying.annotations.TableMapperAnnotation;
-
-@TableMapperAnnotation(tableName = "CART")
+@Table(name = "CART")
 public class Cart implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -18,21 +17,22 @@ public class Cart implements Serializable {
 	 * 主键，为UUID形式
 	 * 
 	 */
-	@FieldMapperAnnotation(dbFieldName = "ID", jdbcType = JdbcType.VARCHAR, isUniqueKey = true)
+	@Id
+	@Column(name = "ID")
 	private String id;
 
 	/**
 	 * 此购物车是否已结帐
 	 * 
 	 */
-	@FieldMapperAnnotation(dbFieldName = "DEAL", jdbcType = JdbcType.BOOLEAN)
+	@Column(name = "DEAL")
 	private Boolean deal;
 
 	/**
 	 * 结账时间
 	 * 
 	 */
-	@FieldMapperAnnotation(dbFieldName = "DEAL_TIME", jdbcType = JdbcType.TIMESTAMP)
+	@Column(name = "DEAL_TIME")
 	@JSONField(format = "yyyy-MM-dd hh:mm:ss")
 	private java.util.Date dealTime;
 

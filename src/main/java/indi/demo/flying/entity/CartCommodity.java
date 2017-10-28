@@ -2,12 +2,15 @@ package indi.demo.flying.entity;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 import org.apache.ibatis.type.JdbcType;
 
 import indi.mybatis.flying.annotations.FieldMapperAnnotation;
-import indi.mybatis.flying.annotations.TableMapperAnnotation;
 
-@TableMapperAnnotation(tableName = "CART_COMMODITY")
+@Table(name = "CART_COMMODITY")
 public class CartCommodity implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -16,7 +19,8 @@ public class CartCommodity implements Serializable {
 	 * 主键，为UUID形式
 	 * 
 	 */
-	@FieldMapperAnnotation(dbFieldName = "ID", jdbcType = JdbcType.VARCHAR, isUniqueKey = true)
+	@Id
+	@Column(name = "ID")
 	private String id;
 
 	/**
@@ -37,7 +41,7 @@ public class CartCommodity implements Serializable {
 	 * 商品的数量
 	 * 
 	 */
-	@FieldMapperAnnotation(dbFieldName = "AMOUNT", jdbcType = JdbcType.INTEGER)
+	@Column(name = "AMOUNT")
 	private Integer amount;
 
 	public Cart getCart() {
